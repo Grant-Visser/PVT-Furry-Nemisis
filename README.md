@@ -13,7 +13,7 @@ If you're reading this, you probably shouldn't be.
 
 ---
 
-##C`#
+##CSharp
 * Null
 
 ---
@@ -40,6 +40,11 @@ If you're reading this, you probably shouldn't be.
 
 ##Python
 * Null
+
+---
+
+##RegEx
+* RegExr Shortcut. (It's all you'll ever need.)
 
 ---
 
