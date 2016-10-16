@@ -13,42 +13,42 @@ If you're reading this, you probably shouldn't be.
 
 ---
 
-##C/#
-* 
+##C\#
+* Null
 
 ---
 
 ##C++
-* 
+* Null
 
 ---
 
 ##HTML
-* 
+* Null
 
 ---
 
 ##Java
-* 
+* Null
 
 ---
 
 ##JavaScript
-* 
+* Null
 
 ---
 
 ##Python
-* 
+* Null
 
 ---
 
 ##VB
-* 
+* Null
 
 ---
 
 ##VBS
-* 
+* Null
 
 ---
