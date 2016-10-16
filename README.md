@@ -1,6 +1,35 @@
-PVT-Furry-Nemisis
+#PVT-Furry-Nemisis
 =================
 
-Private GitHub Repo for small projects ('Cause I'm cheap)
+Private GitHub Repo for code fragments for Grant Visser.
+If you're reading this, you probably shouldn't be.
 
-Hahahahahah!
+=================
+##Batch files
+-IPRefesh
+-Shutdown (1hr)
+-Soundfix
+
+##C/#
+-
+
+##C++
+-
+
+##HTML
+-
+
+##Java
+-
+
+##JavaScript
+-
+
+##Python
+-
+
+##VB
+-
+
+##VBS
+-
