@@ -10,6 +10,7 @@ If you're reading this, you probably shouldn't be.
 * IPRefesh
 * Shutdown (1hr)
 * Soundfix
+* Delete By Extension (Recursive)
 
 ---
 
