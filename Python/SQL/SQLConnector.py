@@ -4,28 +4,30 @@
 
 import pymysql
 
-db = pymysql.connect(host="localhost",    # your host, usually localhost
-                     user="root",         # your username
-                     passwd="test",  # your password
-                     db="sonoo")        # name of the data base
 
-# you must create a Cursor object. It will let
-#  you execute all the queries you need
-cur = db.cursor()
+def dbConnect():
+    db = pymysql.connect(host="localhost",    # your host, usually localhost
+                         user="root",         # your username
+                         passwd="test",       # your password
+                         db="sonoo")          # name of the data base
+    # you must create a Cursor object. It will let
+    #  you execute all the queries you need
+    cur = db.cursor()
+    query = "SELECT * FROM emp"
+    # Use all the SQL you like
+    try:
+        cur.execute(query)
+        # print all the first cell of all the rows
+        for row in cur.fetchall():
+            iId = row[0]
+            sName = row[1]
+            rAge = row[2]
+            print(iId, sName, rAge)
+    except:
+        print("Error: unable to fetch data")
+        db.rollback()
+    db.close()
 
-query = "SELECT * FROM emp"
+dbConnect()
 
-# Use all the SQL you like
-try:
-    cur.execute(query)
 
-# print all the first cell of all the rows
-    for row in cur.fetchall():
-        iId = row[0]
-        sName = row[1]
-        rAge = row[2]
-        print(iId, sName, rAge)
-
-except:
-    print("Error: unable to fetch data")
-db.close()
