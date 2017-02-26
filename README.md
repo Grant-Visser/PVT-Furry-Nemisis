@@ -41,6 +41,7 @@ If you're reading this, you probably shouldn't be.
 
 ##Python
 * File Handling
+* MySQL Connection/Manipulation Class
 
 ---
 
