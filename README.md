@@ -35,7 +35,7 @@ If you're reading this, you probably shouldn't be.
 ---
 
 ##JavaScript
-* MySQL Connection/Manipulation Class
+* Null
 
 ---
 
