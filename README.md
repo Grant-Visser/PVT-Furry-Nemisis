@@ -11,6 +11,8 @@ If you're reading this, you probably shouldn't be.
 * Shutdown (1hr)
 * Soundfix
 * Delete By Extension (Recursive)
+* Disable Hiberfil.sys
+* Shrink pagefile.sys
 
 ---
 
