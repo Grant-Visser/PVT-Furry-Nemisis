@@ -15,7 +15,7 @@ If you're reading this, you probably shouldn't be.
 ---
 
 ##CSharp
-* Null
+* MySQL Connection/Manipulation Class
 
 ---
 
