@@ -13,9 +13,11 @@ db = pymysql.connect(host="localhost",    # your host, usually localhost
 #  you execute all the queries you need
 cur = db.cursor()
 
+query = "SELECT * FROM emp"
+
 # Use all the SQL you like
 try:
-    cur.execute("SELECT * FROM emp")
+    cur.execute(query)
 
 # print all the first cell of all the rows
     for row in cur.fetchall():
