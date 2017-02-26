@@ -30,7 +30,7 @@ If you're reading this, you probably shouldn't be.
 ---
 
 ##Java
-* Null
+* MySQL Connection/Manipulation Class
 
 ---
 
