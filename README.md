@@ -26,6 +26,11 @@ If you're reading this, you probably shouldn't be.
 
 ---
 
+##Arduino
+* Arduino Engine RPM and Shift Light HC-05 and ELM 327
+
+---
+
 ##HTML
 * Null
 
