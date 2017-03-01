@@ -1,15 +1,15 @@
 from flask import Flask, render_template, json, request
-from flask.ext.mysql import MySQL
+from flaskext.mysql import MySQL
 from werkzeug import generate_password_hash, check_password_hash
 
 mysql = MySQL()
 app = Flask(__name__)
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'jay'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'jay'
-app.config['MYSQL_DATABASE_DB'] = 'BucketList'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'test'
+app.config['MYSQL_DATABASE_DB'] = 'bucketlist'
+app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
 mysql.init_app(app)
 
 
@@ -35,8 +35,11 @@ def signUp():
             # All Good, let's call MySQL
             
             conn = mysql.connect()
+            return json.dumps({'message':'Connection Successful'})
             cursor = conn.cursor()
+            return json.dumps({'message':'Cursor Created'})
             _hashed_password = generate_password_hash(_password)
+            return json.dumps({'message':'Password Hashed: ' + _hashed_password})
             cursor.callproc('sp_createUser',(_name,_email,_hashed_password))
             data = cursor.fetchall()
 
@@ -50,9 +53,6 @@ def signUp():
 
     except Exception as e:
         return json.dumps({'error':str(e)})
-    finally:
-        cursor.close() 
-        conn.close()
 
 if __name__ == "__main__":
     app.run(port=5002)
