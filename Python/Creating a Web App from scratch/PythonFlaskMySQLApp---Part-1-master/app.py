@@ -1,6 +1,6 @@
 from flask import Flask, render_template, json, request
 from flaskext.mysql import MySQL
-from werkzeug import generate_password_hash, check_password_hash
+from passlib.hash import pbkdf2_sha512
 
 mysql = MySQL()
 app = Flask(__name__)
@@ -17,12 +17,13 @@ mysql.init_app(app)
 def main():
     return render_template('index.html')
 
+
 @app.route('/showSignUp')
 def showSignUp():
     return render_template('signup.html')
 
 
-@app.route('/signUp',methods=['POST','GET'])
+@app.route('/signUp', methods=['POST', 'GET'])
 def signUp():
     try:
         _name = request.form['inputName']
@@ -33,20 +34,23 @@ def signUp():
         if _name and _email and _password:
             
             # All Good, let's call MySQL
-            
+            print("Fields Detected")
             conn = mysql.connect()
-            return json.dumps({'message':'Connection Successful'})
+            print("DB Connected")
             cursor = conn.cursor()
-            return json.dumps({'message':'Cursor Created'})
-            _hashed_password = generate_password_hash(_password)
-            return json.dumps({'message':'Password Hashed: ' + _hashed_password})
-            cursor.callproc('sp_createUser',(_name,_email,_hashed_password))
+            _hashed_password = pbkdf2_sha512.encrypt(_password)
+            query = ("insert into tbl_user(user_name, user_username, user_password)" \
+                    "values ( %s , %s, %s)")
+            data = (_name, _email, _hashed_password)
+            cursor.execute(query, data)
             data = cursor.fetchall()
 
             if len(data) is 0:
                 conn.commit()
+                print("Success")
                 return json.dumps({'message':'User created successfully !'})
             else:
+                print("Weird Failure")
                 return json.dumps({'error':str(data[0])})
         else:
             return json.dumps({'html':'<span>Enter the required fields</span>'})
@@ -55,4 +59,4 @@ def signUp():
         return json.dumps({'error':str(e)})
 
 if __name__ == "__main__":
-    app.run(port=5002)
+    app.run(port=5000)
