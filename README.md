@@ -47,9 +47,15 @@ If you're reading this, you probably shouldn't be.
 
 ---
 
+##PHP
+* Creating a Database Driven Application With PHP
+
+---
+
 ##Python
 * File Handling
 * MySQL Connection/Manipulation Class
+* Creating a Web App From Scratch Using Python Flask and MySQL
 
 ---
 
