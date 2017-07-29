@@ -1,0 +1,13 @@
+Ctrl + H
+Find what:
+[\u0020]+\r?\n
+Replace with:
+\r\n
+
+or - More likely
+
+Ctrl + H
+Find what:
+\s+\r?\n
+Replace with:
+\r\n
